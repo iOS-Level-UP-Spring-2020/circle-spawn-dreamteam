@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64266AED2437A50B001DF936 /* UIColor+randomBrightColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64266AEC2437A50B001DF936 /* UIColor+randomBrightColor.swift */; };
+		64266AEF2437A538001DF936 /* CGFloat+random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64266AEE2437A538001DF936 /* CGFloat+random.swift */; };
+		64266AF22437A5E5001DF936 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64266AF12437A5E5001DF936 /* Circle.swift */; };
 		77A8DE4824329E3E00A22228 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A8DE4724329E3E00A22228 /* AppDelegate.swift */; };
 		77A8DE4A24329E3E00A22228 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A8DE4924329E3E00A22228 /* SceneDelegate.swift */; };
 		77A8DE4C24329E3E00A22228 /* CircleSpawnController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A8DE4B24329E3E00A22228 /* CircleSpawnController.swift */; };
@@ -15,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		64266AEC2437A50B001DF936 /* UIColor+randomBrightColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+randomBrightColor.swift"; sourceTree = "<group>"; };
+		64266AEE2437A538001DF936 /* CGFloat+random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+random.swift"; sourceTree = "<group>"; };
+		64266AF12437A5E5001DF936 /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
 		77A8DE4424329E3E00A22228 /* CircleSpawn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CircleSpawn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77A8DE4724329E3E00A22228 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77A8DE4924329E3E00A22228 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +41,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		64266AEB2437A4F2001DF936 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				64266AEC2437A50B001DF936 /* UIColor+randomBrightColor.swift */,
+				64266AEE2437A538001DF936 /* CGFloat+random.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		64266AF02437A5D4001DF936 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				64266AF12437A5E5001DF936 /* Circle.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		77A8DE3B24329E3E00A22228 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +77,8 @@
 		77A8DE4624329E3E00A22228 /* CircleSpawn */ = {
 			isa = PBXGroup;
 			children = (
+				64266AF02437A5D4001DF936 /* Models */,
+				64266AEB2437A4F2001DF936 /* Extensions */,
 				77A8DE4724329E3E00A22228 /* AppDelegate.swift */,
 				77A8DE4924329E3E00A22228 /* SceneDelegate.swift */,
 				77A8DE4B24329E3E00A22228 /* CircleSpawnController.swift */,
@@ -134,9 +159,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64266AEF2437A538001DF936 /* CGFloat+random.swift in Sources */,
 				77A8DE4C24329E3E00A22228 /* CircleSpawnController.swift in Sources */,
+				64266AED2437A50B001DF936 /* UIColor+randomBrightColor.swift in Sources */,
 				77A8DE4824329E3E00A22228 /* AppDelegate.swift in Sources */,
 				77A8DE4A24329E3E00A22228 /* SceneDelegate.swift in Sources */,
+				64266AF22437A5E5001DF936 /* Circle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,7 +301,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CircleSpawn/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -290,7 +320,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CircleSpawn/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
