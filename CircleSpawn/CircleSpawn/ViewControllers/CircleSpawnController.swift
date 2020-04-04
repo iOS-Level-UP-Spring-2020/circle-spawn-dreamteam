@@ -73,15 +73,15 @@ class CircleSpawnController: UIViewController, UIGestureRecognizerDelegate {
                 circleView.transform = CGAffineTransform.moveScaled()
             })
         case .changed:
-            let loc = longTap.location(in: self.view)
-            let beginLocation = beginTapLocations[circleView]!
-            let translation = CGPoint(x: loc.x - beginLocation.x, y: loc.y - beginLocation.y)
+            guard let beginLocation = beginTapLocations[circleView] else { return }
+            let currentLocation = longTap.location(in: self.view)
+            let translation = CGPoint(x: currentLocation.x - beginLocation.x, y: currentLocation.y - beginLocation.y)
 
             circleView.transform = CGAffineTransform(translationX: translation.x, y: translation.y).moveScaled()
         case .ended:
-            let loc = longTap.location(in: self.view)
-            let beginLocation = beginTapLocations[circleView]!
-            let translation = CGPoint(x: loc.x - beginLocation.x, y: loc.y - beginLocation.y)
+            guard let beginLocation = beginTapLocations[circleView] else { return }
+            let currentLocation = longTap.location(in: self.view)
+            let translation = CGPoint(x: currentLocation.x - beginLocation.x, y: currentLocation.y - beginLocation.y)
             beginTapLocations.removeValue(forKey: circleView)
 
             circleView.transform = CGAffineTransform.moveScaled()
