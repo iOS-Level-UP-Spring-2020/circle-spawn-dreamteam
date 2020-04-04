@@ -14,12 +14,8 @@ class CircleSpawnController: UIViewController, UIGestureRecognizerDelegate {
     
     private func setupGR() {
         let doubleTap = UITapGestureRecognizer(target: self, action: #selector(onDoubleTap(_ :)))
-        let longTap = UILongPressGestureRecognizer(target: self, action: #selector(onLongTap(_ :)))
-        
         doubleTap.numberOfTapsRequired = 2
-        
         view.addGestureRecognizer(doubleTap)
-        view.addGestureRecognizer(longTap)
     }
     
     @objc func onDoubleTap(_ doubleTap: UITapGestureRecognizer) {
@@ -32,7 +28,6 @@ class CircleSpawnController: UIViewController, UIGestureRecognizerDelegate {
         UIView.animate(withDuration: 0.2) {
             circleView.alpha = 1.0
             circleView.transform = .identity
-
         }
         
         let tripleTap = UITapGestureRecognizer(target: self, action: #selector(onTripleTap(_ :)))
@@ -40,18 +35,35 @@ class CircleSpawnController: UIViewController, UIGestureRecognizerDelegate {
         circleView.addGestureRecognizer(tripleTap)
         
         doubleTap.require(toFail: tripleTap)
+        
+        let longTap = UILongPressGestureRecognizer(target: self, action: #selector(onLongTap(_ :)))
+        circleView.addGestureRecognizer(longTap)
     }
     
     @objc func onTripleTap(_ tap: UITapGestureRecognizer) {
+        guard let view = tap.view else { return }
+        
         UIView.animate(withDuration: 0.2, animations: {
-            tap.view?.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
-            tap.view?.alpha = 0.0
+            view.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
+            view.alpha = 0.0
         }) { _ in
-            tap.view?.removeFromSuperview()
+            view.removeFromSuperview()
         }
     }
     
     @objc func onLongTap(_ tap: UITapGestureRecognizer) {
+        guard let view = tap.view else { return }
         
+        if tap.state == .began {
+            UIView.animate(withDuration: 0.2, animations: {
+                view.alpha = 0.5
+                view.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+            })
+        } else if tap.state == .ended {
+            UIView.animate(withDuration: 0.2, animations: {
+                view.alpha = 1.0
+                view.transform = .identity
+            })
+        }
     }
 }
