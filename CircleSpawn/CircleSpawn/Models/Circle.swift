@@ -18,5 +18,5 @@ class Circle: UIView {
     }
     */
     
-    var touch: CGPoint? = nil
+    var touch: CGPoint = CGPoint()
 }

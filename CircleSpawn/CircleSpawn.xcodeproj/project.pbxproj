@@ -58,6 +58,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		64316B2D243910C2000EA07B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				77A8DE4B24329E3E00A22228 /* CircleSpawnController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		77A8DE3B24329E3E00A22228 = {
 			isa = PBXGroup;
 			children = (
@@ -77,11 +85,11 @@
 		77A8DE4624329E3E00A22228 /* CircleSpawn */ = {
 			isa = PBXGroup;
 			children = (
+				64316B2D243910C2000EA07B /* ViewControllers */,
 				64266AF02437A5D4001DF936 /* Models */,
 				64266AEB2437A4F2001DF936 /* Extensions */,
 				77A8DE4724329E3E00A22228 /* AppDelegate.swift */,
 				77A8DE4924329E3E00A22228 /* SceneDelegate.swift */,
-				77A8DE4B24329E3E00A22228 /* CircleSpawnController.swift */,
 				77A8DE5024329E4100A22228 /* Assets.xcassets */,
 				77A8DE5224329E4100A22228 /* LaunchScreen.storyboard */,
 				77A8DE5524329E4100A22228 /* Info.plist */,
