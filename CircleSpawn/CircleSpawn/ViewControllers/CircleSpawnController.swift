@@ -19,7 +19,20 @@ class CircleSpawnController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @objc func onDoubleTap(_ doubleTap: UITapGestureRecognizer) {
-        let circleView = Circle(frame: CGRect(origin: CGPoint(), size: CGSize(width: 100, height: 100)))
+        let circleView = createCircleView(doubleTap)
+        
+        let tripleTap = UITapGestureRecognizer(target: self, action: #selector(onTripleTap(_ :)))
+        tripleTap.numberOfTapsRequired = 3
+        circleView.addGestureRecognizer(tripleTap)
+        
+        doubleTap.require(toFail: tripleTap)
+        
+        let longTap = UILongPressGestureRecognizer(target: self, action: #selector(onLongTap(_ :)))
+        circleView.addGestureRecognizer(longTap)
+    }
+    
+    private func createCircleView(_ doubleTap: UITapGestureRecognizer) -> CircleView {
+        let circleView = CircleView()
         circleView.center = doubleTap.location(in: view)
         circleView.alpha = 0.0
         circleView.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
@@ -30,14 +43,7 @@ class CircleSpawnController: UIViewController, UIGestureRecognizerDelegate {
             circleView.transform = .identity
         }
         
-        let tripleTap = UITapGestureRecognizer(target: self, action: #selector(onTripleTap(_ :)))
-        tripleTap.numberOfTapsRequired = 3
-        circleView.addGestureRecognizer(tripleTap)
-        
-        doubleTap.require(toFail: tripleTap)
-        
-        let longTap = UILongPressGestureRecognizer(target: self, action: #selector(onLongTap(_ :)))
-        circleView.addGestureRecognizer(longTap)
+        return circleView
     }
     
     @objc func onTripleTap(_ tripleTap: UITapGestureRecognizer) {

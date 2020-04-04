@@ -9,9 +9,10 @@
 import Foundation
 import UIKit
 
-class Circle: UIView {
+class CircleView: UIView {
     
-    override init(frame: CGRect) {
+    init() {
+        let frame = CGRect(origin: CGPoint(), size: CGSize(width: 100, height: 100))
         super.init(frame: frame)
         layer.cornerRadius = 50
         backgroundColor = UIColor.randomBrightColor()

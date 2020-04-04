@@ -11,7 +11,7 @@
 		77A8DE4A24329E3E00A22228 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A8DE4924329E3E00A22228 /* SceneDelegate.swift */; };
 		77A8DE5124329E4100A22228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77A8DE5024329E4100A22228 /* Assets.xcassets */; };
 		77A8DE5424329E4100A22228 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77A8DE5224329E4100A22228 /* LaunchScreen.storyboard */; };
-		B5996B252437C073007E32A3 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5996B242437C073007E32A3 /* Circle.swift */; };
+		B5996B252437C073007E32A3 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5996B242437C073007E32A3 /* CircleView.swift */; };
 		B5996B282437C15D007E32A3 /* CGFloat+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5996B272437C15D007E32A3 /* CGFloat+UIColor.swift */; };
 		B5996B2D2437C5D5007E32A3 /* CircleSpawnController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5996B2C2437C5D5007E32A3 /* CircleSpawnController.swift */; };
 /* End PBXBuildFile section */
@@ -23,7 +23,7 @@
 		77A8DE5024329E4100A22228 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77A8DE5324329E4100A22228 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77A8DE5524329E4100A22228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B5996B242437C073007E32A3 /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
+		B5996B242437C073007E32A3 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		B5996B272437C15D007E32A3 /* CGFloat+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+UIColor.swift"; sourceTree = "<group>"; };
 		B5996B2C2437C5D5007E32A3 /* CircleSpawnController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleSpawnController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,7 +73,7 @@
 		B5996B232437C056007E32A3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B5996B242437C073007E32A3 /* Circle.swift */,
+				B5996B242437C073007E32A3 /* CircleView.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -164,7 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5996B252437C073007E32A3 /* Circle.swift in Sources */,
+				B5996B252437C073007E32A3 /* CircleView.swift in Sources */,
 				77A8DE4824329E3E00A22228 /* AppDelegate.swift in Sources */,
 				B5996B2D2437C5D5007E32A3 /* CircleSpawnController.swift in Sources */,
 				B5996B282437C15D007E32A3 /* CGFloat+UIColor.swift in Sources */,
