@@ -93,7 +93,10 @@ class CircleSpawnController: UIViewController, UIGestureRecognizerDelegate {
             })
         case .cancelled, .failed:
             beginTapLocations.removeValue(forKey: circleView)
-
+            UIView.animate(withDuration: 0.2, animations: {
+                circleView.alpha = 1.0
+                circleView.transform = .identity
+            })
             @unknown default:
             beginTapLocations.removeValue(forKey: circleView)
             print("UIGestureRecognizer.State may have additional unknown values, possibly added in future versions")
