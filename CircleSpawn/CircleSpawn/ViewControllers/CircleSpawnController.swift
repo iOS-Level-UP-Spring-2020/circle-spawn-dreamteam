@@ -40,29 +40,37 @@ class CircleSpawnController: UIViewController, UIGestureRecognizerDelegate {
         circleView.addGestureRecognizer(longTap)
     }
     
-    @objc func onTripleTap(_ tap: UITapGestureRecognizer) {
-        guard let view = tap.view else { return }
+    @objc func onTripleTap(_ tripleTap: UITapGestureRecognizer) {
+        guard let view = tripleTap.view else { return }
         
         UIView.animate(withDuration: 0.2, animations: {
-            view.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
             view.alpha = 0.0
+            view.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
         }) { _ in
             view.removeFromSuperview()
         }
     }
     
-    @objc func onLongTap(_ tap: UITapGestureRecognizer) {
-        guard let view = tap.view else { return }
+    var diffPoint: CGPoint = .zero
+
+    @objc func onLongTap(_ longTap: UITapGestureRecognizer) {
+        guard let circleView = longTap.view else { return }
         
-        if tap.state == .began {
+        if longTap.state == .began {
+            let trans = CGAffineTransform(translationX: -circleView.bounds.midX, y: -circleView.bounds.midY)
+            diffPoint = longTap.location(in: circleView).applying(trans)
+
             UIView.animate(withDuration: 0.2, animations: {
-                view.alpha = 0.5
-                view.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+                circleView.alpha = 0.5
+                circleView.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
             })
-        } else if tap.state == .ended {
+        } else if longTap.state == .changed {
+            let loc = longTap.location(in: view)
+            circleView.center = loc.applying(CGAffineTransform(translationX: -diffPoint.x, y: -diffPoint.y))
+        } else if longTap.state == .ended {
             UIView.animate(withDuration: 0.2, animations: {
-                view.alpha = 1.0
-                view.transform = .identity
+                circleView.alpha = 1.0
+                circleView.transform = .identity
             })
         }
     }
